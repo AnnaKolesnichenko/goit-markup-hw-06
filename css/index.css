@@ -394,20 +394,22 @@ body {
     font-weight: 400;
     margin-bottom: 4px;
     margin-top: 0;
+    cursor: pointer;
 }
 
 .form-field input {
     padding-top: 11px;
     padding-bottom: 11px;
     padding-left: 16px;
+    margin-bottom: 8px;
     height: 40px;
     border: 1px solid rgba(33, 33, 33, .2);
     border-radius: 4px;
+    cursor: pointer;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-field input {
-    margin-bottom: 8px;
-}
 
 textarea {
     height: 120px;
@@ -415,6 +417,8 @@ textarea {
     border: 1px solid rgba(33,33,33, .2);
     border-radius: 4px;
     margin-bottom: 16px;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 textarea::placeholder {
@@ -467,13 +471,22 @@ textarea::placeholder {
 }
 
 
+.form-field input:hover,
+.form-field input:focus,
+textarea:hover,
+textarea:active {
+    border-color: var(--main-accent-color);
+}
+
 .close-modal:hover,
-.close-modal:active,
-.close-modal:hover .close-vector {
+.close-modal:active {
     background-color: var(--btn-accent-color);
     color: var(--main-bg-color);
 }
 
+.close-modal:hover .close-vector {
+    fill: white;
+}
 
 .contact-form button:hover,
 .contact-form button:active{
